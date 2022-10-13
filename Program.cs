@@ -4,29 +4,34 @@
     {
         static void Main(string[] args)
         {
-            ToConvert();
-        }
-
-        static void ToConvert()
-        {
+            int number = 0;
             bool isProgramOn = true;
 
             while (isProgramOn)
             {
-                Console.WriteLine("Введите строку: ");
-                string? userInput = Console.ReadLine();
-                bool result = int.TryParse(userInput, out int number);
+                ReadInt(number);
+            }
 
-                if (result == true)
-                {
-                    Console.WriteLine("Successful: " + number);
-                    isProgramOn = false;
-                }
-                else
-                    Console.WriteLine("Try again");
+        }
+
+        static int ReadInt(int number)
+        {
+            Console.WriteLine("Введите строку: ");
+            string? userInput = Console.ReadLine();
+            bool haveResult = int.TryParse(userInput, out number);
+
+            if (haveResult == true)
+            {
+                Console.WriteLine("Successful: " + number);
+                return number;
+            }
+            else
+            {
+                return 1;
             }
 
         }
 
     }
+
 }
