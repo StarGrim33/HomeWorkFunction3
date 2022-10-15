@@ -5,31 +5,32 @@
         static void Main(string[] args)
         {
             int number = 0;
-            bool isProgramOn = true;
 
-            while (isProgramOn)
-            {
-                ReadInt(number);
-            }
-
+            ReadInt(number);
         }
 
         static int ReadInt(int number)
         {
-            Console.WriteLine("Введите значение: ");
-            string? userInput = Console.ReadLine();
-            bool haveResult = int.TryParse(userInput, out number);
+            bool isProgramOn = true;
 
-            if (haveResult == true)
+            while (isProgramOn)
             {
-                Console.WriteLine("Введенное число: " + number);
-                return number;
+                Console.WriteLine("Введите значение: ");
+                string? userInput = Console.ReadLine();
+                bool haveResult = int.TryParse(userInput, out number);
+
+                if (haveResult == true)
+                {
+                    Console.WriteLine("Введенное число: " + number);
+                    return number;
+                }
+                else
+                {
+                    Console.WriteLine("Введенная строка: " + userInput);
+                }
+
             }
-            else
-            {
-                Console.WriteLine("Введенная строка: " + userInput);
-                return number;
-            }
+            return number;
 
         }
 
