@@ -16,18 +16,19 @@
 
         static int ReadInt(int number)
         {
-            Console.WriteLine("Введите строку: ");
+            Console.WriteLine("Введите значение: ");
             string? userInput = Console.ReadLine();
             bool haveResult = int.TryParse(userInput, out number);
 
             if (haveResult == true)
             {
-                Console.WriteLine("Successful: " + number);
+                Console.WriteLine("Введенное число: " + number);
                 return number;
             }
             else
             {
-                return 1;
+                Console.WriteLine("Введенная строка: " + userInput);
+                return number;
             }
 
         }
