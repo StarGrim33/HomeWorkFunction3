@@ -4,13 +4,14 @@
     {
         static void Main(string[] args)
         {
-            int number = 0;
+            
 
-            ReadInt(number);
+            ReadInt();
         }
 
-        static int ReadInt(int number)
+        static int ReadInt()
         {
+            int number = 0;
             bool isProgramOn = true;
 
             while (isProgramOn)
